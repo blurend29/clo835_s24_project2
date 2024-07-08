@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: time-service-deployment
+  name: time-service-app-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: time-service
+      app: time-service-app
   template:
     metadata:
       labels:
-        app: time-service
+        app: time-service-app
     spec:
       containers:
-      - name: time-service
-        image: junjun290/time-service:latest
+      - name: time-service-app
+        image: junjun290/time-service-app:latest
         ports:
         - containerPort: 3030
